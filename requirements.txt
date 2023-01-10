@@ -1,0 +1,11 @@
+absl-py
+scikit-image
+scikit-video
+optax
+chex
+dm-haiku
+jax
+trackpy
+scikit-learn
+numpy==1.21.6
+numba==0.55

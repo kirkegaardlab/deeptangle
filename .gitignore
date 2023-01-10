@@ -1,0 +1,12 @@
+# Python environment folders
+.venv
+.env
+
+# Vim swap filesj
+*.swp
+
+# Python cache
+__pycache__/
+
+# PyPI related files
+*.egg-info
