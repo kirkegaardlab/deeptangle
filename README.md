@@ -1,6 +1,6 @@
 # de(ep)tangle
 This repository contains the implementation of [Fast spline detection in high density microscopy data](https://arxiv.org/abs/2301.04460).
-![de(ep)tangle method diagram](./docs/figures/network_architecture.png)
+![de(ep)tangle method diagram](./docs/figures/dense.png)
 
 ## Requirements
 To run the code one must first install the dependencies.
