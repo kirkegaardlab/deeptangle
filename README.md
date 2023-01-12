@@ -33,7 +33,7 @@ python3 train.py --batch_size=32 --eval_interval=10 --nworms=100,200 --save
 ## Usage
 Example scripts such as detection and tracking can be found in the [examples folder](./examples)
 
-We include a Dockerfile (cpu only). For linux wer provide a script to run the relevant commands:
+We include a Dockerfile (cpu only). For linux we provide a script to run the relevant commands:
 ```(sudo) sh docker_run.sh```
 
 
