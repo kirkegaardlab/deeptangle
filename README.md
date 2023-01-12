@@ -29,9 +29,14 @@ python3 train.py --batch_size=32 --eval_interval=10 --nworms=100,200 --save
 ## Usage
 Example scripts such as detection and tracking can be found in the [examples folder](./examples)
 
+We include a Dockerfile (cpu only), which can be run on linux using
+```(sudo) sh docker_run.sh```
+
+
 ## Weights
 The weights used on the paper can be downloaded from [here](https://sid.erda.dk/share_redirect/cEjIpG1yQl)
 or by using the following commmand
 ```download
 wget https://sid.erda.dk/share_redirect/cEjIpG1yQl -O weights.zip
 ```
+
