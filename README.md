@@ -1,5 +1,5 @@
 # de(ep)tangle
-This repository contains the implementation of [Fast spline detection in high density microscopy data]().
+This repository contains the implementation of [Fast spline detection in high density microscopy data](https://arxiv.org/abs/2301.04460).
 ![de(ep)tangle method diagram](./docs/figures/network_architecture.png)
 
 ## Requirements
@@ -31,3 +31,7 @@ Example scripts such as detection and tracking can be found in the [examples fol
 
 ## Weights
 The weights used on the paper can be downloaded from [here](https://sid.erda.dk/share_redirect/cEjIpG1yQl)
+or by using the following commmand
+```download
+wget https://sid.erda.dk/share_redirect/cEjIpG1yQl -O weights.zip
+```
