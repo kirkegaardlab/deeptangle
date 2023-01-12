@@ -90,7 +90,7 @@ def main(args):
 
     with dt.time_activity("Converting frames to movie using ffmpeg"):
         cwd = os.path.dirname(os.path.realpath(__file__))
-        cmd = f"ffmpeg -framerate 20 -y  -hide_banner -loglevel error -pattern_type glob -i '{str(outdir_path)}/*.png' -vf 'pad=ceil(iw/2)*2:ceil(ih/2)*2' -c:v libx264 -pix_fmt yuv420p '{str(outdir_path)}/tracking.mp4' "
+        cmd = f"ffmpeg -framerate 20 -y  -hide_banner -loglevel error -pattern_type glob -i '{str(outdir_path)}/*.png' -vf 'pad=ceil(iw/2)*2:ceil(ih/2)*2' -c:v libx264 -pix_fmt yuv420p '{str(outdir_path)}/../tracking.mp4' "
         subprocess.run(cmd, cwd=cwd, shell=True)
 
 
