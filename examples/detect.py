@@ -49,7 +49,7 @@ def main(args):
         plt.imshow(clip[0, 5], cmap="binary")
         for x in predictions.w[:, 1]:
             plt.plot(x[5:-5, 0], x[5:-5, 1], "-")
-    plt.figsave(fig, FLAGS.output, dpi=300)
+    plt.savefig(FLAGS.output, dpi=300)
 
 
 if __name__ == "__main__":
