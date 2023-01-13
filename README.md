@@ -19,7 +19,7 @@ pip install -e .
 ```
 
 ## Train
-To train the model, there is a train script used for the model presented on the paper.
+To train the model, there is a train script used for the model presented in the paper.
 The possible arguments can be seen by using the help flag.
 ```train
 python3 train.py --help
@@ -38,7 +38,7 @@ We include a Dockerfile (cpu only). For linux we provide a script to run the rel
 
 
 ## Weights
-The weights used on the paper can be downloaded from [here](https://sid.erda.dk/share_redirect/cEjIpG1yQl)
+The weights used in the paper can be downloaded from [here](https://sid.erda.dk/share_redirect/cEjIpG1yQl)
 or by using the following commmand
 ```download
 wget https://sid.erda.dk/share_redirect/cEjIpG1yQl -O weights.zip
