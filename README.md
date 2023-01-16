@@ -16,7 +16,7 @@ python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
-Note the requirements relies on custom forks of `dm-haiku` and `trackpy`.
+Note the code relies on custom forks of `dm-haiku` and `trackpy`.
 
 
 If you need to use the model and the auxiliary functions outside this repository, you can install it from the root folder by
