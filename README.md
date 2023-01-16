@@ -1,8 +1,14 @@
 # de(ep)tangle
-This repository contains the implementation of [Fast spline detection in high density microscopy data](https://arxiv.org/abs/2301.04460).
-![de(ep)tangle method diagram](./docs/figures/dense.png)
 
-## Requirements
+This repository contains the implementation of [Fast spline detection in high density microscopy data](https://arxiv.org/abs/2301.04460).
+
+<p align="center">
+  <img src="https://github.com/kirkegaardlab/deeptanglelabel/blob/main/docs/figures/tracking.gif" height="236" />
+  <img src="https://github.com/kirkegaardlab/deeptanglelabel/blob/main/docs/figures/following.gif" height="236" />
+  <img src="https://github.com/kirkegaardlab/deeptanglelabel/blob/main/docs/figures/dense.png" width="710" />
+</p>
+
+## Installation
 To run the code one must first install the dependencies.
 
 ```setup
@@ -34,7 +40,9 @@ python3 train.py --batch_size=32 --eval_interval=10 --nworms=100,200 --save
 Example scripts such as detection and tracking can be found in the [examples folder](./examples)
 
 We include a Dockerfile (cpu only). For linux we provide a script to run the relevant commands:
-```(sudo) sh docker_run.sh```
+```
+(sudo) sh docker_run.sh
+```
 
 
 ## Weights
