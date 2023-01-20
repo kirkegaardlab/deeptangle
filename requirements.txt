@@ -10,4 +10,4 @@ numpy==1.21.6
 numba==0.55
 matplotlib
 https://github.com/alonfnt/dm-haiku/archive/refs/heads/avg_pool_perf.zip
-https://github.com/juliusbierk/trackpy/archive/refs/heads/master.zip
+trackpy

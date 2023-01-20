@@ -8,6 +8,27 @@ import trackpy
 from deeptangle.predict import Predictions
 
 
+# The following lines injects a custom version of
+# the Linker class into trackpy, which permits
+# custom neighbor strategies.
+class CustomLinker(trackpy.linking.linking.Linker):
+    def __init__(self, search_range, memory=0, predictor=None,
+                 adaptive_stop=None, adaptive_step=0.95,
+                 neighbor_strategy=None, link_strategy=None,
+                 dist_func=None, to_eucl=None, *args, **kwargs):
+        neighbor_strategy_ = neighbor_strategy
+        if not isinstance(neighbor_strategy, str):
+            neighbor_strategy_ = 'BTree'
+        super().__init__(search_range, memory=memory, predictor=predictor,
+                 adaptive_stop=adaptive_stop, adaptive_step=adaptive_step,
+                 neighbor_strategy=neighbor_strategy_, link_strategy=link_strategy,
+                 dist_func=dist_func, to_eucl=to_eucl, *args, **kwargs)
+        if not isinstance(neighbor_strategy, str):
+            self.hash_cls = neighbor_strategy
+
+trackpy.linking.linking.Linker = CustomLinker
+
+
 class Query:
     """
     A class for querying a set of points using an asymmetrical distance function.
