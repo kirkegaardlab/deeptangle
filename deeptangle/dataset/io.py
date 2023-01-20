@@ -27,10 +27,9 @@ def read_clip_from_video(filepath, start_time, end_time, fps, size, origin):
 
 
 def video_to_clips(video, num_frames):
-    assert num_frames % 2 == 1, "nframes must have a middle frame"
+    assert num_frames % 2 == 1, "num_frames must have a middle frame"
 
     N = len(video)
-    trimmed_frames = N % num_frames + num_frames // 2
-    slices = np.linspace(0, num_frames, num_frames, dtype=int)
-    clips = np.stack([video[slices + i] for i in range(N - trimmed_frames)])
+    slices = np.arange(num_frames)
+    clips = np.stack([video[slices + i] for i in range(N - num_frames)])
     return clips
