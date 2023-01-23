@@ -24,7 +24,19 @@ jobs:
         run: sudo apt-get update -y && sudo apt-get install wget unzip ffmpeg -y
 
       - name: Install
-        run: pip3 install --upgrade -r requirements.txt
+        run: pip3 install --upgrade -r requirements.txt && pip3 install -e .
 
       - name: Small train
         run: python3 train.py --train_steps 3 --nframes=5 --kpoints=11 --npca=3 --size=64 --nworms_pca=25 --nworms=5,10 --batch_size=4 --clip_duration=0.2 --eval_interval=2 --latent_dim=2
+
+      - name: Download video
+        run: wget https://sid.erda.dk/share_redirect/GVDAVHOZLN -O video.mp4
+     
+      - name: Download weights
+        run: wget https://sid.erda.dk/share_redirect/cEjIpG1yQl -O weights.zip && unzip weights.zip
+
+      - name: Detect
+        run: python3 examples/detect.py --model=weights/ --input=video.mp4 --output=output.png --frame=12 --correction_factor=1.2
+
+      - name: Track
+        run: python3 examples/track.py --model=weights/ --input=video.mp4 --output= --correction_factor=1.2 --num_batches=1
