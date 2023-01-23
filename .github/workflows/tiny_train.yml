@@ -1,0 +1,30 @@
+name: DetectTrack
+
+on:
+  push:
+    branches: [ main, action ]
+  pull_request:
+    branches: [ main, action ]
+
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+          architecture: 'x64'
+
+      - name: apt-get
+        run: sudo apt-get update -y && sudo apt-get install wget unzip ffmpeg -y
+
+      - name: Install
+        run: pip3 install --upgrade -r requirements.txt
+
+      - name: Small train
+        run: python3 train.py --train_steps 3 --nframes=5 --kpoints=11 --npca=3 --size=64 --nworms_pca=25 --nworms=5,10 --batch_size=4 --clip_duration=0.2 --eval_interval=2 --latent_dim=2
