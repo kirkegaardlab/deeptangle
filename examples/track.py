@@ -71,27 +71,27 @@ def main(args):
         identities_list, splines_list = dt.identity_assignment(predictions_list)
         identities_list, splines_list = dt.merge_tracks(identities_list, splines_list, framesize=video.shape[1])
 
-    with dt.time_activity(f"Plotting the results and saving them at {FLAGS.output}"):
-        plt.style.use("fast")
-        outdir_path = Path(FLAGS.output)
-        outdir_path.mkdir(exist_ok=True, parents=True)
-        for t, (identities, splines) in enumerate(zip(identities_list, splines_list)):
-            fig = plt.figure(figsize=(10.42, 10.42))
-            plt.ylim(0, video.shape[1])
-            plt.xlim(0, video.shape[2])
-            plt.imshow(video[5 + t], cmap="binary")
-            for i, x in zip(identities, splines):
-                color = f"C{i%5:02d}"
-                plt.plot(x[5:-5, 0], x[5:-5, 1], "-", color=color)
+    if len(FLAGS.output) > 0:
+        with dt.time_activity(f"Plotting the results and saving them at {FLAGS.output}"):
+            plt.style.use("fast")
+            outdir_path = Path(FLAGS.output)
+            outdir_path.mkdir(exist_ok=True, parents=True)
+            for t, (identities, splines) in enumerate(zip(identities_list, splines_list)):
+                fig = plt.figure(figsize=(10.42, 10.42))
+                plt.ylim(0, video.shape[1])
+                plt.xlim(0, video.shape[2])
+                plt.imshow(video[5 + t], cmap="binary")
+                for i, x in zip(identities, splines):
+                    color = f"C{i%5:02d}"
+                    plt.plot(x[5:-5, 0], x[5:-5, 1], "-", color=color)
 
-            figname = outdir_path.joinpath(f"{t:04d}.png")
-            fig.savefig(figname, pad_inches=0, bbox_inches="tight")
-            plt.close(fig)
+                figname = outdir_path.joinpath(f"{t:04d}.png")
+                fig.savefig(figname, pad_inches=0, bbox_inches="tight")
+                plt.close(fig)
 
-    with dt.time_activity("Converting frames to movie using ffmpeg"):
-        cwd = os.path.dirname(os.path.realpath(__file__))
-        cmd = f"ffmpeg -framerate 20 -y  -hide_banner -loglevel error -pattern_type glob -i '{str(outdir_path)}/*.png' -vf 'pad=ceil(iw/2)*2:ceil(ih/2)*2' -c:v libx264 -pix_fmt yuv420p '{str(outdir_path)}/../tracking.mp4' "
-        subprocess.run(cmd, cwd=cwd, shell=True)
+        with dt.time_activity("Converting frames to movie using ffmpeg"):
+            cmd = f"ffmpeg -framerate 20 -y  -hide_banner -loglevel error -pattern_type glob -i '{str(outdir_path)}/*.png' -vf 'pad=ceil(iw/2)*2:ceil(ih/2)*2' -c:v libx264 -pix_fmt yuv420p '{str(outdir_path)}/../tracking.mp4' "
+            subprocess.run(cmd, shell=True)
 
 
 
