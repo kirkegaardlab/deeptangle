@@ -39,4 +39,12 @@ jobs:
         run: python3 examples/detect.py --model=weights/ --input=video.mp4 --output=output.png --frame=12 --correction_factor=1.2
 
       - name: Track
-        run: python3 examples/track.py --model=weights/ --input=video.mp4 --output= --correction_factor=1.2 --num_batches=1
+        run: python3 examples/track.py --model=weights/ --input=video.mp4 --output=track/ --correction_factor=1.2 --num_batches=1
+
+      - name: Store artefacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: detect-track-output
+          path: |
+            output.png
+            tracking.mp4
