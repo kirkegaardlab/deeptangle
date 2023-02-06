@@ -1,0 +1,16 @@
+absl-py
+scikit-image
+scikit-video
+optax
+chex
+jax
+dm-pix
+scikit-learn
+numpy==1.21.6
+numba==0.55
+matplotlib
+https://github.com/alonfnt/dm-haiku/archive/refs/heads/avg_pool_perf.zip
+trackpy
+https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-22.04/wxPython-4.2.0-cp310-cp310-linux_x86_64.whl
+Gooey
+pandas
