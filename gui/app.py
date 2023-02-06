@@ -49,7 +49,7 @@ def save_splines_as_csv(fname, identities, splines):
     hide_progress_msg=True,
 )
 def main():
-    parser = GooeyParser(description="Many splines tracking (CPU only)")
+    parser = GooeyParser(description="Many splines tracking")
 
     parser.add_argument("--input", default=None, required=True, help="Path to the video.", widget="FileChooser")
     parser.add_argument("--model", default="weights/", required=True, help="Path to the weights", widget="DirChooser")

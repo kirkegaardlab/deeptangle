@@ -22,6 +22,12 @@ wget https://sid.erda.dk/share_redirect/cEjIpG1yQl -O weights.zip
 unzip weights.zip
 ```
 
+You also need to install `ffmpeg`, e.g. by
+```
+sudo apt install ffmpeg
+```
+
+
 ## Usage
 To run, one only needs to write
 ```
