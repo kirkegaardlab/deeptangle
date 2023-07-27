@@ -1,6 +1,9 @@
 # de(ep)tangle
 
-This repository contains the implementation of [Fast spline detection in high density microscopy data](https://arxiv.org/abs/2301.04460).
+[![Communications Biology](https://img.shields.io/badge/CommsBio-10.1038/s42003--023--05098--1-blue?style=flat)](https://www.nature.com/articles/s42003-023-05098-1)
+[![arXiv](https://img.shields.io/badge/arXiv-2301.04460-b31b1b.svg?style=flat)](https://arxiv.org/abs/2301.04460)
+
+This repository contains the implementation of [Fast detection of slender bodies in high density microscopy data](https://www.nature.com/articles/s42003-023-05098-1) paper.
 
 <p align="center">
   <img src="https://github.com/kirkegaardlab/deeptanglelabel/blob/main/docs/figures/tracking.gif" height="236" />
