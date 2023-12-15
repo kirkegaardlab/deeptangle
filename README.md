@@ -14,11 +14,14 @@ This repository contains the implementation of [Fast detection of slender bodies
 ## Installation
 To run the code one must first install the dependencies.
 
-Start by installing `jax` following instructions at their [repository](https://github.com/google/jax?tab=readme-ov-file#installation).
-
 ```setup
 python3 -m venv venv
 source venv/bin/activate
+```
+Start by installing `jax` following instructions at their [repository](https://github.com/google/jax?tab=readme-ov-file#installation).
+Install the remaining dependencies afterwards:
+
+```setup
 pip install -r requirements.txt
 ```
 Note the code relies on a custom fork of `dm-haiku`.
