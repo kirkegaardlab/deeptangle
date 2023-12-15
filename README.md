@@ -13,11 +13,13 @@ This repository contains the implementation of [Fast detection of slender bodies
 
 ## Installation
 To run the code one must first install the dependencies.
+You can do this in a virtual environment:
 
 ```setup
 python3 -m venv venv
 source venv/bin/activate
 ```
+
 Start by installing `jax` following instructions at their [repository](https://github.com/google/jax?tab=readme-ov-file#installation).
 Install the remaining dependencies afterwards:
 
