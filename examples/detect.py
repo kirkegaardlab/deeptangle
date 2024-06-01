@@ -2,6 +2,12 @@ from absl import app, flags
 import deeptangle as dt
 import matplotlib.pyplot as plt
 from skimage.exposure import equalize_adapthist
+import numpy
+
+# scikit-video uses deprecated numpy.float, numpy.int
+# hacky fix: https://github.com/scikit-video/scikit-video/issues/154
+numpy.float = numpy.float64
+numpy.int = numpy.int_
 import skvideo.io
 
 

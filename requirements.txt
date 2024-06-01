@@ -3,11 +3,12 @@ scikit-image
 scikit-video
 optax
 chex
-jax
+jax>=0.4.16
+jaxlib>=0.4.20
 dm-pix
 scikit-learn
-numpy==1.21.6
-numba==0.55
+numpy>=1.21.6
+numba>=0.55
 matplotlib
-https://github.com/alonfnt/dm-haiku/archive/refs/heads/avg_pool_perf.zip
+dm-haiku
 trackpy
