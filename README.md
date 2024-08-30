@@ -26,8 +26,6 @@ Install the remaining dependencies afterwards:
 ```setup
 pip install -r requirements.txt
 ```
-Note the code relies on a custom fork of `dm-haiku`.
-
 
 If you need to use the model and the auxiliary functions outside this repository, you can install it from the root folder by
 ```install
