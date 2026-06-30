@@ -60,3 +60,8 @@ or by using the following commmand
 wget https://sid.erda.dk/share_redirect/cEjIpG1yQl -O weights.zip
 ```
 
+## Data
+
+Data used in publication can be found at https://zenodo.org/records/8093305
+
+
