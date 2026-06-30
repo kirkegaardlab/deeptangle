@@ -1,11 +1,11 @@
 import os
 import pickle
 import subprocess
+from pathlib import Path
 
 from absl import app, flags
 import jax
 import jax.numpy as jnp
-from matplotlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 from skimage.exposure import equalize_adapthist
@@ -21,7 +21,7 @@ import deeptangle as dt
 
 
 flags.DEFINE_string("input", default=None, required=True, help="Path to the video.")
-flags.DEFINE_string("model", default=None, required=True, help="Path to the weights")
+flags.DEFINE_string("model", default="ckpt", help="Path to the weights")
 flags.DEFINE_string("output", default="out/", help="Location to store the frames.")
 flags.DEFINE_float("correction_factor", default=1, help="Value of the correction_factor.")
 flags.DEFINE_float("score_threshold", default=0.5, help="Score threshold to prune bad predictions.")
