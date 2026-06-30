@@ -67,7 +67,7 @@ def main(args):
 
         def non_max_suppression(p):
             p = jax.tree_util.tree_map(lambda x: np.array(x), p)
-            non_suppressed_p = dt.non_max_suppression(p, threshold=0.5, overlap_threshold=0.5, cutoff=48)
+            non_suppressed_p = dt.non_max_suppression(p, threshold=FLAGS.score_threshold, overlap_threshold=FLAGS.overlap_threshold, cutoff=48)
             return jax.tree_util.tree_map(lambda x: x[non_suppressed_p], p)
 
         predictions_list = predict_in_batches(clips)
