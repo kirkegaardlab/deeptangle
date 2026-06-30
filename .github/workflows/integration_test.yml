@@ -42,7 +42,7 @@ jobs:
         run: python3 examples/track.py --model=weights/ --input=video.mp4 --output=track/ --correction_factor=1.2 --num_batches=1
 
       - name: Store artefacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: detect-track-output
           path: |
